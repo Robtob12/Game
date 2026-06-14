@@ -1,18 +1,12 @@
-function menu1($cursor){
+<?php
+function menu(array $opciones, int $cursor): string{
+    $texto = [];
 
-    $op1 = ($cursor == 1) ? "► [1] Nueva partida" : "  [1] Nueva partida";
-    $op2 = ($cursor == 2) ? "► [2] Continuar"    : "  [2] Continuar";
-    $op3 = ($cursor == 3) ? "► [3] Créditos"     : "  [3] Créditos";
-    $op4 = ($cursor == 4) ? "► [4] Salir"        : "  [4] Salir";
+    foreach ($opciones as $indice => $opcion) {
+        $texto[] = ($cursor == $indice)
+            ? "► [$indice] $opcion"
+            : "  [$indice] $opcion";
+    }
 
-    return <<<TEXT
-╔══════════════════════════════════════╗
-║      SANS Y LOS HUESOUNIVERSOS       ║
-╚══════════════════════════════════════╝
-
-$op1
-$op2
-$op3
-$op4
-TEXT;
+    return implode("\n", $texto);
 }

@@ -1,6 +1,4 @@
 <?php
-# IMPORTAR HERRAMIENTAS #
-include "tools.php";
 
 # LIMPIAR CONSOLA ANTES DE USAR #
 CLEAR();

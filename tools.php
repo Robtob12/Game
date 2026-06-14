@@ -6,7 +6,7 @@
     esta devolvera lo que el jugador indique
 */
 
-function READ_ACTION(){
+function ACTION(){
     return trim(fgets(STDIN));
 }
 
@@ -44,13 +44,13 @@ function NARRATIVE($texto = ''){
 
 }
 
-// ? FUNCION READ_KEY (IA)
+// ? FUNCION KEY (IA)
 /*
     Esta funcion nos permitira leer las flechas
     del teclado como otras teclas
 */
 
-function READ_KEY(){
+function KEYS(){
     shell_exec('stty -icanon -echo');
 
     $key = fread(STDIN, 1);
