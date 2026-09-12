@@ -4,7 +4,9 @@
 require_once "Engine/dev.php";
 require_once "models/Character.php";
 require_once "models/Warrior.php";
+require_once "models/Monster.php";
 require_once "functions/combat.php";
+require_once "models/Weapon.php";
 
 # [1] - historia
 
@@ -63,7 +65,7 @@ while(!$class){
     
     switch($option){
         case "1":
-            $p1 = new Warrior($n, 100, 10);
+            $p1 = new Warrior($n, "(0-0)", 100, 10, 1);
             $p1->defens = 5;
             $class = true;
         break;
@@ -85,7 +87,7 @@ while($p1->hp > 0){
     SAY("\n".COLOR("[3]", "yellow")." - Inventario");
     SAY("\n".COLOR("[4]", "yellow")." - ".COLOR("Salir", "red"));
 
-    $option = READ();
+    $option = READ("\n\n");
     switch($option){
         case "1":
             combat($p1);
